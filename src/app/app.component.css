@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+  background-color: darkgreen;
+}
+.wrapper ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.wrapper ul li {
+  list-style: none;
+  padding: 10px;
+}
+
+.wrapper ul li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+button {
+  border: none;
+  padding: 5px 10px;
+  margin: 20px 10px;
+  background: coral;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper ul {
+    display: block;
+    text-align: center;
+  }
+
+  .wrapper ul li {
+    width: 80%;
+    margin: 0px auto;
+    margin-bottom: 10px;
+    background-color: rgba(1, 2, 3, 0.5);
+    padding: 5px 100px;
+  }
+}
