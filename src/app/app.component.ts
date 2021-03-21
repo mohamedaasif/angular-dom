@@ -25,13 +25,14 @@ export class AppComponent implements AfterViewInit, OnInit {
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit() {
-    console.log(this.child.whoAmI());
   }
 
   ngAfterViewInit() {
     this.renderer.appendChild(this.div, this.text);
     this.renderer.appendChild(this.el.nativeElement, this.div);
     this.renderer.setStyle(this.el.nativeElement, "text-align", "center");
+
+    console.log(this.child.whoAmI()); //calling a method from child component
   }
 
   num = 1;
@@ -45,6 +46,6 @@ export class AppComponent implements AfterViewInit, OnInit {
     console.log(list);
     this.renderer.appendChild(this.listItem.nativeElement, list);
     this.num++;
-    this.input.nativeElement.value = " ";
+    this.input.nativeElement.value = '';
   }
 }
