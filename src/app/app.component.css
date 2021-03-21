@@ -27,6 +27,20 @@ button {
   cursor: pointer;
 }
 
+input {
+  margin: 10px 10px 0px 10px;
+  width: 50%;
+  height: 4vh;
+}
+
+.item {
+  font-size: 18px;
+  margin: 10px;
+  color: blue;
+  font-family: monospace;
+  text-align: left;
+}
+
 @media screen and (max-width: 480px) {
   .wrapper ul {
     display: block;

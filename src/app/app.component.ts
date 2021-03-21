@@ -13,6 +13,7 @@ import {
 })
 export class AppComponent implements AfterViewInit {
   @ViewChild("list") listItem: ElementRef;
+  @ViewChild("input") input: ElementRef;
 
   div = this.renderer.createElement("h1");
   text = this.renderer.createText("Iam DOM");
@@ -25,11 +26,18 @@ export class AppComponent implements AfterViewInit {
     this.renderer.setStyle(this.el.nativeElement, "text-align", "center");
   }
 
+
+   num = 1;
   toggleList() {
-    let num = Math.floor(Math.random() * 100);
+    // let num = Math.floor(Math.random() * 100);
     let list = this.renderer.createElement("li");
-    let numText = this.renderer.createText(`Random number : ${num}`);
-    this.renderer.appendChild(list, numText);
+    let text = this.input.nativeElement.value;
+    let value = this.renderer.createText(`${this.num}. ${text}`);
+    // let value = this.renderer.createText(`Random number : ${num}`);
+    this.renderer.appendChild(list, value);
+    console.log(list);
     this.renderer.appendChild(this.listItem.nativeElement, list);
+    this.num++;
+    this.input.nativeElement.value = ' ';
   }
 }
