@@ -8,3 +8,11 @@ button {
   cursor: pointer;
   text-align: center;
 }
+
+#xyz {
+  color: red;
+}
+
+.fonty {
+  font-family: monospace;
+}

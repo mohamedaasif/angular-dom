@@ -23,24 +23,32 @@ export class ChildComponent implements OnInit {
     return "Iam a child component";
   }
 
-  //setAttribute() and removeAttribute()
-  isSet = true;
-  setAttribute() {
-    if (this.isSet) {
+  //Renderer2 methods
+  toggleFlag = false;
+  onClick() {
+    this.toggleFlag = this.toggleFlag === true ? false : true;
+    if (this.toggleFlag) {
       this.renderer.setAttribute(
         this.attr.nativeElement,
         "background-color",
         "green"
-      );
-      this.isSet = false;
+      ); //setAttribute()
+      this.renderer.addClass(this.attr.nativeElement, "fonty"); //addClass()
+      this.renderer.setStyle(
+        this.attr.nativeElement,
+        "border",
+        "2px solid black"
+      ); //setStyle()
       console.log(this.attr.nativeElement);
     } else {
       this.renderer.removeAttribute(
         this.attr.nativeElement,
         "background-color"
-      );
-      this.isSet = true;
+      ); //removeAttribute()
+      this.renderer.removeClass(this.attr.nativeElement, "fonty"); //removeClass()
+      this.renderer.removeStyle(this.attr.nativeElement, "border"); //removeStyle()
       console.log(this.attr.nativeElement);
     }
+    this.renderer.setProperty(this.attr.nativeElement, "id", "xyz"); //setProperty()
   }
 }
