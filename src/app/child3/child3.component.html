@@ -1,5 +1,5 @@
 <div class="container" #parent>
-  <span (click)="removeParent()">x</span>
+  <span (click)="removeParent()" #sibling>x</span>
   <p #refChild>
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, ducimus iusto. Pariatur unde quas reiciendis. Odit
     debitis veniam aliquid vel dolor ut, placeat quos nulla itaque maxime maiores amet necessitatibus saepe id ab
@@ -11,3 +11,5 @@
 <a href="#" #listen>Listen()</a>
 
 <button (click)="onClick()">Remove child</button>
+
+<input type="text" #setValue>
