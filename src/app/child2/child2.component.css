@@ -1,0 +1,28 @@
+div {
+  margin: 10px;
+}
+
+ul {
+  border: 2px solid blue;
+  padding: 10px;
+}
+
+li {
+  padding: 10px;
+  list-style: none;
+}
+
+button {
+  width: 100%;
+  border: none;
+  padding: 5px 10px;
+  margin: 20px 10px;
+  background: coral;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.flex {
+  justify-content: space-around;
+}

@@ -1,7 +1,7 @@
-import { Directive, ElementRef, Renderer2 } from "@angular/core";
+import { Directive, ElementRef, HostListener, Renderer2 } from "@angular/core";
 
 @Directive({
-  selector: "[appMyDirective]"
+  selector: "[myDirective]"
 })
 export class MyDirectiveDirective {
   mytext = "Iam from directive";
