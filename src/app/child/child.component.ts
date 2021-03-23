@@ -1,8 +1,6 @@
 import {
   Component,
   ElementRef,
-  HostListener,
-  OnInit,
   Renderer2,
   ViewChild
 } from "@angular/core";
@@ -12,12 +10,10 @@ import { MyDirectiveDirective } from "../../my-directive.directive";
   templateUrl: "./child.component.html",
   styleUrls: ["./child.component.css"]
 })
-export class ChildComponent implements OnInit {
+export class ChildComponent{
   @ViewChild("attr") attr: ElementRef;
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
-
-  ngOnInit() {}
 
   whoAmI() {
     return "Iam a child component";

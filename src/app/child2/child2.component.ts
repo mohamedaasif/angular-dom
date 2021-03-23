@@ -1,10 +1,8 @@
 import {
   Component,
   ElementRef,
-  OnInit,
   Renderer2,
-  ViewChild,
-  ViewChildren
+  ViewChild
 } from "@angular/core";
 
 @Component({
@@ -12,12 +10,10 @@ import {
   templateUrl: "./child2.component.html",
   styleUrls: ["./child2.component.css"]
 })
-export class Child2Component implements OnInit {
+export class Child2Component {
   @ViewChild("ulRef") uList: ElementRef;
 
   constructor(private renderer: Renderer2) {}
-
-  ngOnInit() {}
 
   toggle = false;
   onClick() {

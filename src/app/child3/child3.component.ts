@@ -1,28 +1,38 @@
-import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Renderer2, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-child3',
   templateUrl: './child3.component.html',
   styleUrls: ['./child3.component.css']
 })
-export class Child3Component implements OnInit,AfterViewInit {
+export class Child3Component implements AfterViewInit {
  
   @ViewChild('parent') parent:ElementRef;
   @ViewChild('refChild') refChild:ElementRef; 
+  @ViewChild('listen') listen:ElementRef;
 
   constructor(private renderer:Renderer2) { }
 
-  ngOnInit() {
-  }
-
+  toggle = false;
   p = this.renderer.createElement('p');
   text = this.renderer.createText('Child3 component(insertBefore())'); 
+
   ngAfterViewInit() {
     const element = this.renderer.appendChild(this.p,this.text);
     
     const  div = this.parent.nativeElement;
     const child = this.refChild.nativeElement;
     this.renderer.insertBefore(div,this.p,child);  //insertBefore()
+
+    //listen()
+    this.renderer.listen(this.listen.nativeElement,'click',()=>{
+        this.toggle = (this.toggle === true) ? false : true;
+        if(this.toggle) {
+          this.renderer.setStyle(this.listen.nativeElement,'text-decoration','none');
+        } else {
+          this.renderer.removeStyle(this.listen.nativeElement,'text-decoration');
+        }
+    });
   }
 
   onClick() {
@@ -35,4 +45,7 @@ export class Child3Component implements OnInit,AfterViewInit {
     console.log(parent);
     this.renderer.setStyle(parent,'display','none');
   }
+
+  
+  
 }
