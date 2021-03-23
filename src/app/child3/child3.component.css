@@ -30,7 +30,7 @@ span {
   top: 0;
   right: 5px;
   margin: 5px;
-  background-color: black;
+  background-color: coral;
   padding: 2px 10px;
   font-size: 1.4rem;
   border-radius: 5px;
@@ -38,6 +38,6 @@ span {
 }
 
 span:hover {
-  color: red;
+  color: black;
   cursor: pointer;
 }
